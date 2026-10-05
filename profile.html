@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Профиль пользователя</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <h1>Профиль</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Доски</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="profile-container">
+            <h2>Настройки пользователя</h2>
+            <p><strong>Имя:</strong> Администратор</p>
+            <p><strong>Email:</strong> admin@kanban.local</p>
+            <hr>
+            <button class="btn" style="background-color: #ff5630;" onclick="clearData()">Очистить все данные (LocalStorage)</button>
+        </div>
+    </main>
+    <script>
+        function clearData() {
+            if(confirm("Вы уверены? Все доски будут удалены.")) {
+                localStorage.removeItem('kanban_boards');
+                alert("Данные очищены.");
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>
